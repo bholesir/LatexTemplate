@@ -8,12 +8,15 @@
 \usepackage[top=0.70in, bottom=0.70in, left=0.8in,right=0.80in]{geometry} % setting the page alignment with this package
 \usepackage[pdftex]{graphicx} %for embedding images
 %\usepackage[hyphens]{url} %for proper url entries
-\usepackage[dvips, bookmarks, colorlinks=false]{hyperref} %for creating links in the pdf version and other additional pdf attributes, no effect on the printed document
+\usepackage[ bookmarks, colorlinks=false]{hyperref} %for creating links in the pdf version and other additional pdf attributes, no effect on the printed document
 \usepackage[final]{pdfpages} %for embedding another pdf, remove if not required
 \usepackage{float} %used for figure placement with H as a parameter
 %\usepackage[hyphens]{url}
 %\usepackage{hyperref}
-\usepackage{pslatex} % for times new roman, old package, but works
+
+% need to comment in case of MAC (http://www.bluesky.com/help/latex/index.html)
+%\usepackage{pslatex} % for times new roman, old package, but works
+
 \usepackage{array} % for making text bold in table
 
 
@@ -61,8 +64,8 @@
 %\fancyhf{} % clear all header and footer fields
 \fancyfoot[L]{\emph{This project is a Proof of Concept of Social Engineering Attack on Facebook using Web Scraping and Two Man in the middle attack Technique.}} % except the center
 \fancyfoot[R]{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
 }
 
 \pagestyle{fancy}
