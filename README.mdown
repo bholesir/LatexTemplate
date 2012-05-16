@@ -1,0 +1,18 @@
+Template In Latex
+================================
+
+Author : Mayank Jain
+
+
+Errors :
+---------------
+- "! Font OT1/ptm/m/n/10=ptmr7t at 10.0pt not loadable: Metric (TFM) file not found"
+
+%\usepackage{pslatex} or \usepackage{times} % for times new roman, old package, but works
+
+You are missing the psfonts metrics files. They map the Unix-style names to Macintosh fonts (ptmr7t=Times), among other things. We now have a set of metrics by Arthur Ogawa that fixes this problem. The new set is available on our CD or from our ftp server, called basic psfonts adobe metrics.
+(http://www.bluesky.com/help/latex/index.html)
+
+- "! Package hyperref Error: Wrong DVI mode driver option `dvips',"
+(http://tex.stackexchange.com/questions/39943/how-to-fix-package-hyperref-error-wrong-dvi-mode-driver-option-dvips)
+
