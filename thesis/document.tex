@@ -1,0 +1,147 @@
+% define documentclass
+\documentclass[12pt, bibliography=totoc, a4paper, abstracton, numbers=noenddot]{scrreprt}
+
+% define used packages
+\usepackage[left=4.0cm, right=2.0cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{bibgerm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage[numbers]{natbib}
+\bibliographystyle{alphadin}
+
+\usepackage{lastpage}
+
+% advanced tables
+\usepackage{array}
+
+% header and footer
+\usepackage{fancyhdr}
+
+% links
+\usepackage{url}
+
+% internal links
+\usepackage[colorlinks=true ,linkcolor=black,
+			anchorcolor=black ,citecolor=black ,filecolor=black,
+			menucolor=black ,urlcolor=black]{hyperref}
+
+% mathematical formulas
+\usepackage{amsmath, amssymb}
+
+% to include images side by side
+\usepackage{subfigure}
+
+% to use floating images
+\usepackage{wrapfig}
+
+% define the programming language
+\input{lststyles}
+
+% used for more colums per page
+\usepackage{multicol}
+
+%set default pagestyle
+\pagestyle{empty}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% #####
+% #
+% # START config area
+% #
+% #####
+
+\newcommand{\HEADER}[0]{Fachhochschule Schmalkalden SS 2011}
+\newcommand{\PAGENUMBERS}[0]{Seite \pagemark \ von \pageref{LastPage}}
+\newcommand{\DATE}[0]{1.1.2012}
+
+\newcommand{\AUTHOR}[0]{Max Müller}
+\newcommand{\MATNR}[0]{123456}
+\newcommand{\STREET}[0]{Musterstraße 11}
+\newcommand{\ZIP}[0]{12345}
+\newcommand{\TOWN}[0]{Musterstadt}
+
+\newcommand{\REFERENT}[0]{Prof. Dr. Marianne Musterfrau}
+\newcommand{\KOREFERENT}[0]{Prof. Dr. Max Mustermann}
+
+\newcommand{\TITLE}[0]{Thema}
+\newcommand{\COURSE}[0]{Studiengang}
+\newcommand{\TYPE}[0]{Masterarbeit}
+\newcommand{\COMPLETION}[0]{Master of Science}
+
+\hypersetup{
+pdfauthor = {\AUTHOR},
+pdftitle = {\TITLE},
+pdfsubject = {\TITLE},
+pdfkeywords = {},
+pdfcreator = {\LaTeX},
+pdfproducer = {\LaTeX}
+}
+
+% #####
+% #
+% # END config area
+% #
+% #####
+
+% starting the document
+\begin{document}
+
+% set pagenumbering to roman(I II III IV)
+\pagenumbering{Roman}
+% input the title
+\input{title}
+
+\input{abstract}
+
+% load the preamble
+\input{preamble}
+
+% loads the fancy pagestyle for register part
+\input{fancyRegisterPart}
+
+% create the registers
+\tableofcontents\newpage
+
+% set pagenumbering to arabic(1 2 3 4)
+\pagenumbering{arabic}
+% loads the fancy pagestyle for main part
+\input{fancyMainPart}
+
+% #####
+% # load the chapter from the files
+% #
+% # TODO: create new chapter
+% #####
+\input{chapter1}
+\input{chapter2}
+
+\newpage
+
+% loads the fancy pagestyle for register part
+\input{fancyRegisterPart}
+
+% #####
+% # load the bibliography
+% #####
+\bibliography{bibliography}
+
+% #####
+% # load the appendix from the files
+% #####
+\input{appendix}
+
+\listoffigures
+\listoftables
+\lstlistoflistings
+% #####
+% # load the sworn declaration
+% #####
+\input{declaration}
+% end of the document
+\end{document}
